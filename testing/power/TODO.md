@@ -1,3 +1,3 @@
 # Power Testing Requirements
 
-- [ ] Current draw for battery sizing.
+- [ ] Power audit using datasheet values
