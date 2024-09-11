@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15" version="24.7.12">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.3 Safari/605.1.15" version="24.7.12">
   <diagram name="Page-1" id="bAWNuwk2mVDMqg9bGHkL">
-    <mxGraphModel dx="1434" dy="808" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1122" dy="706" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -30,7 +30,7 @@
         <mxCell id="Ar0c8oPVUMQDSsYsdo-V-102" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.817;exitY=0.007;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;shape=flexArrow;exitPerimeter=0;fillColor=#007FFF;" parent="1" source="Ar0c8oPVUMQDSsYsdo-V-8" target="Ar0c8oPVUMQDSsYsdo-V-100" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ZkNK1JgyBZcpypqjev8R-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=8 8;fillColor=#ffe6cc;strokeColor=#d79b00;" edge="1" parent="1" source="Ar0c8oPVUMQDSsYsdo-V-8" target="ZkNK1JgyBZcpypqjev8R-6">
+        <mxCell id="ZkNK1JgyBZcpypqjev8R-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=8 8;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" source="Ar0c8oPVUMQDSsYsdo-V-8" target="ZkNK1JgyBZcpypqjev8R-6" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="531" y="324" />
@@ -38,13 +38,13 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="Ar0c8oPVUMQDSsYsdo-V-8" value="ESP32-C3-WROOM-02-N4" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="Ar0c8oPVUMQDSsYsdo-V-8" value="ESP32-S3-MINI-1-N8&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;355mA@3V3&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="350" y="210" width="150" height="152.5" as="geometry" />
         </mxCell>
-        <mxCell id="Ar0c8oPVUMQDSsYsdo-V-9" value="External Flash&lt;div&gt;SD Card Holder&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="Ar0c8oPVUMQDSsYsdo-V-9" value="External Flash&lt;div&gt;SD Card Holder&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;200mA@3V3&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="727" y="225" width="120" height="122.5" as="geometry" />
         </mxCell>
-        <mxCell id="Ar0c8oPVUMQDSsYsdo-V-10" value="SX1262&lt;div&gt;LoRa Module&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="Ar0c8oPVUMQDSsYsdo-V-10" value="Wave-Core1262-HF&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;120mA@3V3&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="555" y="225" width="120" height="122.5" as="geometry" />
         </mxCell>
         <mxCell id="Ar0c8oPVUMQDSsYsdo-V-105" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=15;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=8 8;strokeColor=#FF0000;" parent="1" source="Ar0c8oPVUMQDSsYsdo-V-11" target="Ar0c8oPVUMQDSsYsdo-V-21" edge="1">
@@ -282,31 +282,31 @@
         <mxCell id="Ar0c8oPVUMQDSsYsdo-V-104" value="Multi-Purpose&lt;div&gt;&lt;div&gt;&lt;div&gt;&amp;nbsp;Button&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="392" y="104" width="66" height="37" as="geometry" />
         </mxCell>
-        <mxCell id="ZkNK1JgyBZcpypqjev8R-2" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+        <mxCell id="ZkNK1JgyBZcpypqjev8R-2" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
           <mxGeometry x="409.5" y="149" width="31" height="31" as="geometry" />
         </mxCell>
-        <mxCell id="ZkNK1JgyBZcpypqjev8R-3" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+        <mxCell id="ZkNK1JgyBZcpypqjev8R-3" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
           <mxGeometry x="413.5" y="153.5" width="23" height="23" as="geometry" />
         </mxCell>
-        <mxCell id="ZkNK1JgyBZcpypqjev8R-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.817;exitY=0.007;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;shape=flexArrow;exitPerimeter=0;fillColor=#007FFF;" edge="1" parent="1">
+        <mxCell id="ZkNK1JgyBZcpypqjev8R-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.817;exitY=0.007;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;shape=flexArrow;exitPerimeter=0;fillColor=#007FFF;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="424.52" y="210" as="sourcePoint" />
             <mxPoint x="424.52" y="180" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ZkNK1JgyBZcpypqjev8R-5" value="Reset Button" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="ZkNK1JgyBZcpypqjev8R-5" value="Reset Button" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="440.5" y="119" width="67" height="22" as="geometry" />
         </mxCell>
-        <mxCell id="ZkNK1JgyBZcpypqjev8R-6" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="ZkNK1JgyBZcpypqjev8R-6" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="584" y="487" width="130" height="131" as="geometry" />
         </mxCell>
-        <mxCell id="ZkNK1JgyBZcpypqjev8R-9" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+        <mxCell id="ZkNK1JgyBZcpypqjev8R-9" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="747" y="730" width="30" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="ZkNK1JgyBZcpypqjev8R-10" value="Wifi" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="ZkNK1JgyBZcpypqjev8R-10" value="Wifi" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="767" y="725" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="ZkNK1JgyBZcpypqjev8R-12" value="End User&lt;div&gt;&lt;br&gt;&lt;div&gt;Operate device and utilize network&lt;/div&gt;&lt;div&gt;&amp;nbsp;via Locally hosted Web-App&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="ZkNK1JgyBZcpypqjev8R-12" value="End User&lt;div&gt;&lt;br&gt;&lt;div&gt;Operate device and utilize network&lt;/div&gt;&lt;div&gt;&amp;nbsp;via Locally hosted Web-App&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="587.5" y="490.25" width="123" height="124.5" as="geometry" />
         </mxCell>
       </root>
