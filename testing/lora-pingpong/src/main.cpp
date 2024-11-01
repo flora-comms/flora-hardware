@@ -16,12 +16,52 @@
 // include the library
 #include <RadioLib.h>
 
+// HARDWARE CONFIG
+
+// determine the delay between recieving and transmitting in ms
+#define TRANSMIT_DELAY  1000
+
 // uncomment the following only on one
 // of the nodes to initiate the pings
-#define INITIATING_NODE
+//#define INITIATING_NODE
 
 //#define HELTEC
-#define PETAL
+//#define PETAL
+#define LILYGO
+
+#ifdef HELTEC
+#define HEL_NSS 8
+#define HEL_DIO1 14
+#define HEL_NRST 12
+#define HEL_BUSY 13
+SX1262 radio = new Module(HEL_NSS, HEL_DIO1, HEL_NRST, HEL_BUSY);
+#endif
+
+#ifdef PETAL
+#define NSS 34
+#define IRQ 39
+#define NRST 48
+#define BUSY 33
+#define MOSI 35
+#define MISO 37
+#define SCK 36
+SPIClass spi(HSPI);
+SPISettings spiSettings(2000000, MSBFIRST, SPI_MODE0);
+SX1262 radio = new Module(NSS, IRQ, NRST, BUSY, spi, spiSettings);
+#endif
+
+#ifdef LILYGO
+#define NSS 7
+#define IRQ 33
+#define NRST 8
+#define BUSY 34
+#define MOSI 6
+#define MISO 3
+#define SCK 5
+SPIClass spi(HSPI);
+SPISettings spiSettings(2000000, MSBFIRST, SPI_MODE0);
+SX1262 radio = new Module(NSS, IRQ, NRST, BUSY, spi, spiSettings);
+#endif
 
 // SX1262 Setup
 #define LORA_FREQ 915.0 // MHz
@@ -31,27 +71,6 @@
 #define LORA_SYNC 0x34
 #define LORA_POWER 17  // dBm
 #define LORA_PREAMB 16 // symbols
-
-#ifdef PETAL
-  #define NSS   34
-  #define IRQ   39
-  #define NRST  48
-  #define BUSY  33
-  #define MOSI  35
-  #define MISO  37
-  #define SCK   36
-  SPIClass spi(HSPI);
-  SPISettings spiSettings(2000000, MSBFIRST, SPI_MODE0);
-  SX1262 radio = new Module(NSS, IRQ, NRST, BUSY, spi, spiSettings);
-#endif
-
-#ifdef HELTEC
-  #define HEL_NSS 8
-  #define HEL_DIO1 14
-  #define HEL_NRST 12
-  #define HEL_BUSY 13
-  SX1262 radio = new Module(HEL_NSS, HEL_DIO1, HEL_NRST, HEL_BUSY);
-#endif
 
   // or detect the pinout automatically using RadioBoards
   // https://github.com/radiolib-org/RadioBoards
@@ -87,14 +106,18 @@
 void setup()
 {
   delay(5000);
-  #ifdef PETAL
+  #if defined(PETAL) || defined(LILYGO)
     Serial.println("Beginning....");
     spi.begin(SCK, MISO, MOSI, NSS);
+    #ifdef PETAL
+    pinMode(IRQ, INPUT);
+    #endif
   #endif
-  Serial.begin(9600);
+  Serial.begin(115200);
 
   // initialize SX1262 with default settings
   Serial.print(F("[SX1262] Initializing ... "));
+  gpio_reset_pin((gpio_num_t)BUSY);
   int state = radio.begin(LORA_FREQ, LORA_BW, LORA_SF, LORA_CR, LORA_SYNC, LORA_POWER, LORA_PREAMB);
   if (state == RADIOLIB_ERR_NONE)
   {
@@ -199,7 +222,7 @@ void loop()
       }
 
       // wait a second before transmitting again
-      delay(1000);
+      delay(TRANSMIT_DELAY);
 
       // send another one
       Serial.print(F("[SX1262] Sending another packet ... "));
