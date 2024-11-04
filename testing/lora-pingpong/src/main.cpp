@@ -1,16 +1,8 @@
 #include <Arduino.h>
 
 /*
-  RadioLib SX126x Ping-Pong Example
-
-  This example is intended to run on two SX126x radios,
-  and send packets between the two.
-
-  For default module settings, see the wiki page
-  https://github.com/jgromes/RadioLib/wiki/Default-configuration#sx126x---lora-modem
-
-  For full API reference, see the GitHub Pages
-  https://jgromes.github.io/RadioLib/
+  Tests the functionality of the SX1262 LoRa Module on the Petal.
+  See the README for more info.
 */
 
 // include the library
@@ -18,16 +10,19 @@
 
 // HARDWARE CONFIG
 
-// determine the delay between recieving and transmitting in ms
-#define TRANSMIT_DELAY  1000
+// #define HELTEC
+// #define PETAL
+#define LILYGO
 
 // uncomment the following only on one
 // of the nodes to initiate the pings
 //#define INITIATING_NODE
 
-//#define HELTEC
-//#define PETAL
-#define LILYGO
+#ifdef INITIATING_NODE
+#define TRANSMIT_DELAY 2500
+#else
+#define TRANSMIT_DELAY 1000
+#endif
 
 #ifdef HELTEC
 #define HEL_NSS 8
