@@ -226,7 +226,7 @@ void loop()
 
       // send another one
       Serial.print(F("[SX1262] Sending another packet ... "));
-      transmissionState = radio.startTransmit("Hello World!");
+      transmissionState = radio.startTransmit("Hello Petal!");
       transmitFlag = true;
     }
   }
