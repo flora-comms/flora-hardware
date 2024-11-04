@@ -82,7 +82,8 @@ String JSONtoSTRING(String json) {
   int nodeID = doc["nodeID"];
   int SOS = doc["SOS"];
 
-  String combinedString = payload + "," + String(nodeID) + "," + String(SOS);
+  String combinedString =
+      "\"" + payload + "\"" + "," + String(nodeID) + "," + String(SOS);
   DBG_PRINT("Parsed to String: ");
   DBG_PRINTLN(combinedString);
   DBG_PRINTLN("");
