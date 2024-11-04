@@ -83,7 +83,7 @@ String JSONtoSTRING(String json) {
   int SOS = doc["SOS"];
 
   String combinedString =
-      "\"" + payload + "\"" + "," + String(nodeID) + "," + String(SOS);
+      "\"" + payload + "\"" + "," + String(nodeID) + "," + String(SOS); // "payload",nodeID,SOS
   DBG_PRINT("Parsed to String: ");
   DBG_PRINTLN(combinedString);
   DBG_PRINTLN("");
@@ -91,7 +91,7 @@ String JSONtoSTRING(String json) {
   return combinedString;
 }
 
-void appendHistory(String fileName, String *message) // payload, nodeID, SOS
+void appendHistory(String fileName, String *message) // "payload", nodeID, SOS
 {
   // Write to file
   file = SD.open(fileName, FILE_APPEND);
