@@ -11,12 +11,12 @@
 // HARDWARE CONFIG
 
 // #define HELTEC
-// #define PETAL
-#define LILYGO
+#define PETAL
+// #define LILYGO
 
 // uncomment the following only on one
 // of the nodes to initiate the pings
-//#define INITIATING_NODE
+#define INITIATING_NODE
 
 #ifdef INITIATING_NODE
 #define TRANSMIT_DELAY 2500
@@ -34,7 +34,7 @@ SX1262 radio = new Module(HEL_NSS, HEL_DIO1, HEL_NRST, HEL_BUSY);
 
 #ifdef PETAL
 #define NSS 34
-#define IRQ 39
+#define IRQ 38
 #define NRST 48
 #define BUSY 33
 #define MOSI 35
@@ -112,7 +112,7 @@ void setup()
 
   // initialize SX1262 with default settings
   Serial.print(F("[SX1262] Initializing ... "));
-  gpio_reset_pin((gpio_num_t)BUSY);
+  gpio_reset_pin((gpio_num_t)IRQ);
   int state = radio.begin(LORA_FREQ, LORA_BW, LORA_SF, LORA_CR, LORA_SYNC, LORA_POWER, LORA_PREAMB);
   if (state == RADIOLIB_ERR_NONE)
   {

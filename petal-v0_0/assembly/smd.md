@@ -34,3 +34,4 @@ had a pile of component bags.
 
 - ESP32 unable to see quality of pad solder. One board doesn't have a funtional blue LED. not sure the cause.
 - USB not recognized when C5,6 and R6 are on the lines. they are not necessary. DO NOT PLACE!!!
+- GPIO39 is super buggy for IRQ and not reliable. Scratch off mask between LoRa_IRQ pad and adjacent GPIO38 pad before applying solder paste so they bridge. IRQ pin in software has been moved to GPIO38.
