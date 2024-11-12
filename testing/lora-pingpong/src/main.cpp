@@ -11,17 +11,17 @@
 // HARDWARE CONFIG
 
 // #define HELTEC
-// #define PETAL
-#define LILYGO
+ #define PETAL
+//#define LILYGO
 
 // uncomment the following only on one
 // of the nodes to initiate the pings
 //#define INITIATING_NODE
 
 #ifdef INITIATING_NODE
-#define TRANSMIT_DELAY 2500
-#else
 #define TRANSMIT_DELAY 1000
+#else
+#define TRANSMIT_DELAY 2500
 #endif
 
 #ifdef HELTEC
