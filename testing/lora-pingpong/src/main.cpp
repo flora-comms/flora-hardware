@@ -11,8 +11,8 @@
 // HARDWARE CONFIG
 
 // #define HELTEC
-#define PETAL
-// #define LILYGO
+//#define PETAL
+ #define LILYGO
 
 // uncomment the following only on one
 // of the nodes to initiate the pings
@@ -221,7 +221,8 @@ void loop()
 
       // send another one
       Serial.print(F("[SX1262] Sending another packet ... "));
-      transmissionState = radio.startTransmit("Hello Petal!");
+      uint8_t bytes[] = {0xFF, 0x02, 0x00, 0x00, 'l','i','l','y','g','o','\0'};
+      transmissionState = radio.startTransmit(bytes, 11);
       transmitFlag = true;
     }
   }
