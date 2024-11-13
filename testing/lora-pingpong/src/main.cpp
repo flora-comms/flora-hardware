@@ -59,13 +59,13 @@ SX1262 radio = new Module(NSS, IRQ, NRST, BUSY, spi, spiSettings);
 #endif
 
 // SX1262 Setup
-#define LORA_FREQ 915.0 // MHz
-#define LORA_BW 250.0   // kHz
-#define LORA_SF 11
-#define LORA_CR 5
-#define LORA_SYNC 0x34
-#define LORA_POWER 17  // dBm
-#define LORA_PREAMB 16 // symbols
+#define LORA_FREQ 900.0 // MHz
+#define LORA_BW 62.5   // kHz
+#define LORA_SF 12
+#define LORA_CR 8
+#define LORA_SYNC 0x10
+#define LORA_POWER 10  // dBm
+#define LORA_PREAMB 8 // symbols
 
   // or detect the pinout automatically using RadioBoards
   // https://github.com/radiolib-org/RadioBoards
@@ -113,7 +113,7 @@ void setup()
   // initialize SX1262 with default settings
   Serial.print(F("[SX1262] Initializing ... "));
   gpio_reset_pin((gpio_num_t)IRQ);
-  int state = radio.begin(LORA_FREQ, LORA_BW, LORA_SF, LORA_CR, LORA_SYNC, LORA_POWER, LORA_PREAMB);
+  int state = radio.begin(LORA_FREQ, LORA_BW, LORA_SF, LORA_CR, LORA_SYNC, LORA_POWER);
   if (state == RADIOLIB_ERR_NONE)
   {
     Serial.println(F("success!"));
