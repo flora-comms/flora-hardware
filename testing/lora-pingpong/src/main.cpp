@@ -59,35 +59,36 @@ SX1262 radio = new Module(NSS, IRQ, NRST, BUSY, spi, spiSettings);
 #endif
 
 // SX1262 Setup
-#define LORA_FREQ 900.0 // MHz
-#define LORA_BW 62.5   // kHz
-#define LORA_SF 12
-#define LORA_CR 8
-#define LORA_SYNC 0x10
-#define LORA_POWER 10  // dBm
-#define LORA_PREAMB 8 // symbols
+#define LORA_FREQ 915.0 // MHz
+#define LORA_SYNC 0x34  // sync word
+#define LORA_POWER 17   // tx power in dBm
+#define LORA_PREAMB 16  // # of symbols in preamble
+// long fast
+#define LORA_BW 250.0 // kHz
+#define LORA_SF 11
+#define LORA_CR 5
 
-  // or detect the pinout automatically using RadioBoards
-  // https://github.com/radiolib-org/RadioBoards
-  /*
-  #define RADIO_BOARD_AUTO
-  #include <RadioBoards.h>
-  Radio radio = new RadioModule();
-  */
+// or detect the pinout automatically using RadioBoards
+// https://github.com/radiolib-org/RadioBoards
+/*
+#define RADIO_BOARD_AUTO
+#include <RadioBoards.h>
+Radio radio = new RadioModule();
+*/
 
-  // save transmission states between loops
-  int transmissionState = RADIOLIB_ERR_NONE;
+// save transmission states between loops
+int transmissionState = RADIOLIB_ERR_NONE;
 
-  // flag to indicate transmission or reception state
-  bool transmitFlag = false;
+// flag to indicate transmission or reception state
+bool transmitFlag = false;
 
-  // flag to indicate that a packet was sent or received
-  volatile bool operationDone = false;
+// flag to indicate that a packet was sent or received
+volatile bool operationDone = false;
 
-  // this function is called when a complete packet
-  // is transmitted or received by the module
-  // IMPORTANT: this function MUST be 'void' type
-  //            and MUST NOT have any arguments!
+// this function is called when a complete packet
+// is transmitted or received by the module
+// IMPORTANT: this function MUST be 'void' type
+//            and MUST NOT have any arguments!
 #if defined(ESP8266) || defined(ESP32)
   ICACHE_RAM_ATTR
 #endif
@@ -140,6 +141,7 @@ void setup()
   // send the first packet on this node
   Serial.print(F("[SX1262] Sending first packet ... "));
   transmissionState = radio.startTransmit("Hello World!");
+  transmitFlag = true;
 #else
 
   // start listening for LoRa packets on this node
