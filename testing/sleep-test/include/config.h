@@ -16,6 +16,6 @@
 #define PWM_FREQ 12000
 #define PWM_RES 8
 
-#define USER_BTN GPIO_NUM_14
+#define USER_BTN 14
 
 #endif // CONFIG_H
