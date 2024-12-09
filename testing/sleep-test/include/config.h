@@ -4,6 +4,7 @@
 // Include necessary libraries
 #include <Arduino.h>
 #include <FreeRTOS.h>
+#include <driver/rtc_io.h>
 #include <esp_sleep.h>
 
 // Set up the RGB LED pins
