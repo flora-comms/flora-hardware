@@ -68,10 +68,10 @@ void setup() {
   // pinMode((gpio_num_t)USER_BTN, INPUT_PULLUP);
   // gpio_wakeup_enable((gpio_num_t)USER_BTN, GPIO_INTR_LOW_LEVEL);
   // esp_sleep_enable_gpio_wakeup();
-
-  esp_sleep_enable_ext0_wakeup((gpio_num_t)USER_BTN, 0);
   rtc_gpio_pullup_en((gpio_num_t)USER_BTN);
   rtc_gpio_pulldown_dis((gpio_num_t)USER_BTN);
+  esp_sleep_enable_ext0_wakeup((gpio_num_t)USER_BTN, 0);
+  
 
   // Create FreeRTOS tasks for LED blinking and sleep
   xTaskCreate(&greenTask, "Green Task", 1024, NULL, 1, &greenTaskHandle);
