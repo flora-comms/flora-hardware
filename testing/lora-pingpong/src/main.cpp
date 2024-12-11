@@ -140,7 +140,8 @@ void setup()
 #if defined(INITIATING_NODE)
   // send the first packet on this node
   Serial.print(F("[SX1262] Sending first packet ... "));
-  transmissionState = radio.startTransmit("Hello World!");
+  uint8_t bytes[] = {0xFF, 0x02, 0x01, 0x01, 'l', 'i', 'l', 'y', 'g', 'o', '\0'};
+  transmissionState = radio.startTransmit(bytes, 11);
   transmitFlag = true;
 #else
 
@@ -223,7 +224,7 @@ void loop()
 
       // send another one
       Serial.print(F("[SX1262] Sending another packet ... "));
-      uint8_t bytes[] = {0xFF, 0x02, 0x00, 0x00, 'l','i','l','y','g','o','\0'};
+      uint8_t bytes[] = {0xFF, 0x02, 0x01, 0x01, 'l','i','l','y','g','o','\0'};
       transmissionState = radio.startTransmit(bytes, 11);
       transmitFlag = true;
     }
