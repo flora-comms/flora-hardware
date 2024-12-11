@@ -35,7 +35,12 @@ void sleepTask(void *pvParameters) {
   while (true) {
     if (greenDone && blueDone) {
       // Go to Sleep
+      Serial.println(greenDone);
+      Serial.println(blueDone);
+      Serial.println("going to sleep now");
       esp_light_sleep_start();
+      esp_sleep_wakeup_cause_t wakeupCause = esp_sleep_get_wakeup_cause();
+      Serial.println(wakeupCause);
       // wake up and reset flags then resume tasks
       greenDone = false;
       blueDone = false;
@@ -60,9 +65,13 @@ void setup() {
   ledcAttachPin(B_PIN, B_CHANNEL);
 
   // Set up button pin as input with pull-up
-  pinMode(USER_BTN, INPUT_PULLUP);
-  gpio_wakeup_enable(USER_BTN, GPIO_INTR_LOW_LEVEL);
-  esp_sleep_enable_gpio_wakeup();
+  // pinMode((gpio_num_t)USER_BTN, INPUT_PULLUP);
+  // gpio_wakeup_enable((gpio_num_t)USER_BTN, GPIO_INTR_LOW_LEVEL);
+  // esp_sleep_enable_gpio_wakeup();
+  rtc_gpio_pullup_en((gpio_num_t)USER_BTN);
+  rtc_gpio_pulldown_dis((gpio_num_t)USER_BTN);
+  esp_sleep_enable_ext0_wakeup((gpio_num_t)USER_BTN, 0);
+  
 
   // Create FreeRTOS tasks for LED blinking and sleep
   xTaskCreate(&greenTask, "Green Task", 1024, NULL, 1, &greenTaskHandle);
