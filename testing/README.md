@@ -12,9 +12,24 @@ Navigating this directory
 Code to test the functionality of the LoRa module on the Petal.
 Requires PlatformIO.
 
+### lora-sleep
+
+Code to test the LoRa wakeup from light sleep.
+Requires platformIO.
+
+### LoraSwr
+
+Code to test hardware SWR and radio performance.
+Requires PlatformIO and the test setup found in the test plan.
+
 ### sdWrite
 
 Code to test the functionality of the SD card on the Petal.
+Requires PlatformIO.
+
+### sleep-test
+
+Code to test light sleep and wakeup sources.
 Requires PlatformIO.
 
 ### assembly-checklist.xlsx
