@@ -20,4 +20,4 @@ Petal Radio v0.0 testing results. Testing procedures and templates can be found 
 
 ### pcb
 
-Zipped PCB Gerber and Altium files.
+PCB Schematic and Altium files.
